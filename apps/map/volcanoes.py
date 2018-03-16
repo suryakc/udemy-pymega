@@ -23,6 +23,8 @@ for volcano in data:
     #fg.add_child(folium.Marker(location=volcano[0:2], popup=str(volcano[-1]) + ' m', icon=volcano_icon))
     fg.add_child(folium.CircleMarker(location=volcano[0:2], radius=6, 
         color='grey', fill=True, fill_color=popup_color, fill_opacity=0.7, popup=str(volcano[-1]) + ' m'))
+
+fg.add_child(folium.GeoJson(data=(open('world.json', 'r', encoding='utf-8-sig').read())))
 map.add_child(fg)
 
 
